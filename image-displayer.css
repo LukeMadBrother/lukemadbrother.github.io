@@ -1,0 +1,62 @@
+.image-displayer {
+    background-color: rgba(0,0,0,0.7);
+
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    overflow: auto;
+    scrollbar-color: #5A7A4D #FEFFED;
+    scrollbar-width: thin;
+}
+
+.image-displayer.show {
+    display: flex;
+}
+
+.image-displayer > .displayer-description {
+    color: #FEFFED;
+    background-color: #000000;
+
+    position: fixed;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    top: 1vh;
+    font-size: 2vw;
+}
+
+.image-displayer > .displayer-cross {
+    width: 2vw;
+    min-width: 50px;
+    min-height: 50px;
+    aspect-ratio: 1 / 1;
+    
+    position: fixed;
+    top: 4%;
+    right: 2%;
+}
+
+.displayer-cross > img {
+    size: 100%;
+    width: 100%;
+}
+
+.image-displayer > img {
+    cursor: zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+}
+
+img.clickable {
+    cursor: pointer;
+}

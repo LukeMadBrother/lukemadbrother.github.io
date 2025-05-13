@@ -1,0 +1,250 @@
+html {
+    scrollbar-color: #5A7A4D #FEFFED;
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #7DAA6A;
+    scrollbar-color: #5A7A4D #FEFFED;
+    scrollbar-width: thin;
+    background-image: url("immagini/forest.jpg");
+    background-repeat: repeat;
+}
+
+* {
+    font-family:"Times New Roman";
+}
+
+b {
+    color: #49623E;
+}
+
+a:hover {
+    border: 2px solid #5A7A4D;
+    border-radius:7px;
+    background-color: #5A7A4D;
+    color: #FEFFED ! important;
+}
+
+a {
+    border: 2px solid transparent;
+    color: #5A7A4D;
+}
+
+ul {
+  list-style-image: url('immagini/notes.png');
+}
+
+
+.nav-bar {
+    background-color: #2B3B2B;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing:border-box;
+
+    width: 100%;
+    height: max(6vh, 60px);
+    padding: 5px 0.5% 5px 0.5%;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dropdown {
+    display: flex;
+    cursor: pointer;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown > img {
+    width: 80%;
+    height: 80%;
+}
+
+.dropdown > .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 10%;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 8px solid #FEFFED;
+    border-right: 8px solid #FEFFED;
+    border-radius: 0 0 20px 0;
+    background-color: #FEFFED;
+    overflow: auto;
+    max-height: 250px;
+}
+
+.dropdown-content.show {    
+    display: block;
+}
+
+.dropdown-content > li {
+    width: 300px;
+    text-align: center;
+    color: #2B3B2B;
+    border-bottom: 1px solid #7DAA6A;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+}
+
+.dropdown-content > li:hover {
+    color: #2B3B2B !important;
+    background-color: #7DAA6A;
+}
+
+.dropdown-content a {
+    box-sizing: border-box;
+    padding: 12px 16px;
+    display: block;
+    color: inherit !important;
+    background-color: transparent !important;
+    border: transparent !important;
+    text-decoration: none !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+.content {
+    background-color:#FEFFED;
+    border-radius:10px;
+    margin:auto;
+    margin-top: max(10vh, 100px);
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 20px 2% 20px 2%; 
+}
+
+.contentEnd {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width: 75%;
+    color: #FEFFED;
+}
+
+.titolo h1{
+    text-align: center;
+    border-bottom: 7px solid #49623E;
+    padding: 0 0 7px 0;
+    margin: 0 0 15px 0;
+    color: #49623E;
+    font-size: 4rem;
+}
+
+.descrizione {
+    margin:auto;
+    margin-bottom:20px;
+    text-align: center;
+    font-size: 2.5rem;
+    width: 80%;
+}
+
+.paragrafo {
+    display: flex;
+    flex-direction: column;
+
+    border-left: 6px solid #5A7A4D;
+    padding-left: 7px;
+    margin: 7vh 0 7vh 0;
+    max-width: 80%;   
+}
+
+.paragrafo h2 {
+    all: initial;
+    margin: 0 0 10px 10px;
+    color: #5A7A4D;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.paragrafo h3 {
+    all: initial;
+    margin: 0 0 10px 5px;
+    color: #5A7A4D;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.paragrafo p, .paragrafo a {
+    margin: 10px 0 10px 0;
+    font-size: 1.9rem;
+}
+
+.paragrafo > img, .slider-container, p > img{
+    align-self: center;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.credits {
+    margin:0;
+    border-bottom:3px solid #FEFFED;
+    width:270px;
+}
+
+.break {
+    display:block;
+    margin:auto;
+    width: max(7vw, 7vh);
+}
+
+.back {
+    display: flex;
+    flex-direction: row;
+}
+
+.back img {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 10%;
+    height: 75%;
+}
+
+.back a {
+    
+    text-decoration: underline;
+    border: 0.5px solid transparent;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.back a:hover {
+    border: 0.5px solid #5A7A4D;
+    border-radius:7px;
+    background-color: #5A7A4D;
+    color: #FEFFED ! important;
+    cursor: pointer;
+}
+
+#prima-dopo {
+    width: 90%;
+    aspect-ratio: 2 / 1;
+    min-height: 100px;
+    min-width: 200px;
+    
+    border-radius: 5px;
+}
+
+#menu-button {
+    height: 100%;
+    aspect-ratio: 1.1 / 1;
+}
+
+.hidden {
+    display: none !important;
+}
