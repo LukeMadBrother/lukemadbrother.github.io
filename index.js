@@ -22,13 +22,22 @@ function setupSliders ()
     let mousedown = false;
 
     window.onmouseup = () => {mousedown = false;};
+    window.ontouchend = () => {mousedown = false; console.log("MOUSEUP")};
     window.onmousedown = () => {mousedown = true;};
+    window.ontouchstart = () => {mousedown = true; console.log("MOUSEDOWN")};
     document.addEventListener('mousemove', (e) =>
         {
             mouseX = e.clientX;
         }
     );
-    
+    document.addEventListener('touchmove', (e) =>
+        {
+            const { touches, changedTouches } = e.originalEvent ?? e;
+            const touch = touches[0] ?? changedTouches[0];
+            mouseX = touch.pageX;
+        }
+    );
+
     for (let separator of sliderSeparators)
     {
         const img1 = separator.parentElement.querySelector(".slider-1");
@@ -36,8 +45,8 @@ function setupSliders ()
         let separatorInUse = false;
         img1.style.clipPath = "inset(0 0 0 "+separatorWidth/2+"px)";
 
-
-        separator.parentElement.addEventListener("mousedown", () => {
+        function activateSeparator()
+        {
             separatorInUse = true;
             mousedown = true;
             
@@ -73,7 +82,10 @@ function setupSliders ()
                 }
                 img1.style.clipPath = "inset(0 0 0 "+(mouseX-container.x)+"px)"
             }, 10);
-        })
+        }
+
+        separator.parentElement.addEventListener("mousedown", () => {activateSeparator()});
+        separator.parentElement.addEventListener("touchmove", () => {activateSeparator()});
     }
 }
 
